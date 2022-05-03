@@ -48,3 +48,10 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         make defconfig
+    - name: 下载 dl 库，编译固件
+      run: |
+        make download -j8
+        make V=s -j$(nproc)
+    - name: 编译结束
+      run: |
+        echo "done"
