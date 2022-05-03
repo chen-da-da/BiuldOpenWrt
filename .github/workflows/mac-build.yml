@@ -11,7 +11,8 @@ jobs:
       run: |
         system_profiler SPHardwareDataType
         xcodebuild -version
-        df -h 
+        df -lh
+        java -version
     - name: 安装 Homebrew
       run: |
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
