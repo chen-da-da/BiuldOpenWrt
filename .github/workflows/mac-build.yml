@@ -15,7 +15,7 @@ jobs:
         java -version
     - name: 安装xcode
       run: |
-        xcode-select —install
+        xcode-select --install
     - name: 安装 Homebrew
       run: |
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
