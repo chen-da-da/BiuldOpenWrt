@@ -1,0 +1,7 @@
+#使用mac编译
+name: Build OpenWrt on mac
+#on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
