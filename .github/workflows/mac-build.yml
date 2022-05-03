@@ -10,3 +10,4 @@ jobs:
     - name: 查看mac
       run: |
         system_profiler SPHardwareDataType
+        xcodebuild -version
