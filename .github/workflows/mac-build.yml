@@ -59,7 +59,7 @@ jobs:
 #         rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip vim wget xmlto xxd zlib1g-dev
     - name: 创建大小写敏感的磁盘镜像
       run: |
-        50g -type SPARSE -fs "Case-sensitive HFS+" -volname OpenWrt OpenWrt.sparseimage
+        hdiutil create -size 50g -type SPARSE -fs "Case-sensitive HFS+" -volname OpenWrt OpenWrt.sparseimage
         hdiutil attach OpenWrt.sparseimage
         cd /Volumes/OpenWrt
         pwd
