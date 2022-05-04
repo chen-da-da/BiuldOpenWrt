@@ -19,11 +19,13 @@ jobs:
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     - name: 使用 Homebrew 安装工具链、依赖与基础软件包
       run: |
-        brew unlink awk
+        #brew unlink awk
         brew update
         brew upgrade
         brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep make ncurses pkg-config wget quilt xz
         brew install gcc@11
+        echo "make version*****************************"
+        make -v
     - name: 输入以下命令，添加到系统环境变量中
       run: |
         echo 'export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"' >> ~/.bashrc
@@ -36,7 +38,7 @@ jobs:
     - name: 重新加载shell 启动文件
       run: |
         source ~/.bashrc
-#        bash
+#       bash
 #     - name: 安装依赖
 #       run: |
 #         sudo apt update -y
