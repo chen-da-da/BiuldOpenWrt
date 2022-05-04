@@ -81,7 +81,7 @@ jobs:
         cd /Volumes/OpenWrt/lede
         pwd
         make download -j8
-        make V=s -j$(nproc)
+        make -j$(nproc) ||  make -j1 V=s
     - name: 编译结束
       run: |
         echo "done"
