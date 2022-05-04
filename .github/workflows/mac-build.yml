@@ -21,7 +21,7 @@ jobs:
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     - name: 使用 Homebrew 安装工具链、依赖与基础软件包
       run: |
-        #brew unlink awk
+        brew unlink awk
         brew update
         brew upgrade
         brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep make ncurses pkg-config wget quilt xz
