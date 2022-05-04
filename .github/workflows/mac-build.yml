@@ -79,6 +79,7 @@ jobs:
         make defconfig
     - name: 下载 dl 库，编译固件
       run: |
+        pwd
         make download -j8
         make V=s -j$(nproc)
     - name: 编译结束
