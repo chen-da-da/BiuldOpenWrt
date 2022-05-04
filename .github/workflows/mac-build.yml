@@ -22,7 +22,8 @@ jobs:
         #brew unlink awk
         brew update
         brew upgrade
-        brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep make ncurses pkg-config wget quilt xz
+        #brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep make ncurses pkg-config wget quilt xz
+        brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep ncurses pkg-config wget quilt xz
         brew install gcc@11
     - name: 升级make
       run: |
