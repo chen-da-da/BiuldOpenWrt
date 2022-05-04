@@ -69,6 +69,7 @@ jobs:
         pwd
     - name: 下载源代码，更新 feeds 并选择配置
       run: |
+        cd /Volumes/OpenWrt
         git clone https://github.com/coolsnowwolf/lede
         cd lede
         echo "*********************pwd**************************************"
