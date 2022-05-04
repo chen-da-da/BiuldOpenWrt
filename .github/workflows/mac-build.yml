@@ -42,7 +42,7 @@ jobs:
         echo 'export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"' >> ~/.bashrc
         echo 'export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"' >> ~/.bashrc
         echo 'export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"' >> ~/.bashrc
-        #echo 'export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"' >> ~/.bashrc
+        echo 'export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"' >> ~/.bashrc
     - name: 重新加载shell 启动文件
       run: |
         source ~/.bashrc
@@ -57,10 +57,17 @@ jobs:
 #         libmpc-dev libmpfr-dev libncurses5-dev libncursesw5-dev libreadline-dev libssl-dev libtool lrzsz \
 #         mkisofs msmtp nano ninja-build p7zip p7zip-full patch pkgconf python2.7 python3 python3-pip qemu-utils \
 #         rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip vim wget xmlto xxd zlib1g-dev
+    - name: 创建大小写敏感的磁盘镜像
+      run: |
+        50g -type SPARSE -fs "Case-sensitive HFS+" -volname OpenWrt OpenWrt.sparseimage
+        hdiutil attach OpenWrt.sparseimage
+        cd /Volumes/OpenWrt
+        pwd
     - name: 下载源代码，更新 feeds 并选择配置
       run: |
         git clone https://github.com/coolsnowwolf/lede
         cd lede
+        pwd
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         make defconfig
