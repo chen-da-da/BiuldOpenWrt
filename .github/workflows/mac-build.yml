@@ -32,7 +32,7 @@ jobs:
         ./configure
         make
         make install
-        sudo cp make /usr/bin/make
+        export PATH="/usr/local/bin:$PATH"
         make -v
     - name: 输入以下命令，添加到系统环境变量中
       run: |
