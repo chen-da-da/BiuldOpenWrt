@@ -22,9 +22,10 @@ jobs:
         #brew unlink awk
         brew update
         brew upgrade
-        #brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep make ncurses pkg-config wget quilt xz
-        brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep ncurses pkg-config wget quilt xz
+        brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep make ncurses pkg-config wget quilt xz
+        #brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep ncurses pkg-config wget quilt xz
         brew install gcc@11
+        make -v
     - name: 升级make
       run: |
         wget http://ftp.gnu.org/gnu/make/make-4.3.tar.gz
