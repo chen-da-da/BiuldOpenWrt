@@ -71,6 +71,7 @@ jobs:
       run: |
         git clone https://github.com/coolsnowwolf/lede
         cd lede
+        echo "*********************pwd**************************************"
         pwd
         ./scripts/feeds update -a
         ./scripts/feeds install -a
