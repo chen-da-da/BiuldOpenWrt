@@ -15,7 +15,6 @@ jobs:
         java -version
     - name: 安装xcode
       run: |
-        #xcode-select --install
         Software Update
     - name: 安装 Homebrew
       run: |
