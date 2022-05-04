@@ -53,8 +53,8 @@ jobs:
         bash
     - name: 安装依赖
       run: |
-        brew update
-        brew upgrade
+        #brew update
+        #brew upgrade
         brew install ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential \
         bzip2 ccache cmake cpio curl device-tree-compiler fastjar flex gawk gettext gcc-multilib g++-multilib \
         git gperf haveged help2man intltool libc6-dev-i386 libelf-dev libglib2.0-dev libgmp3-dev libltdl-dev \
