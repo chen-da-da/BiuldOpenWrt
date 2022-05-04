@@ -46,7 +46,7 @@ jobs:
     - name: 重新加载shell 启动文件
       run: |
         source ~/.bashrc
-#       bash
+        bash
 #     - name: 安装依赖
 #       run: |
 #         sudo apt update -y
