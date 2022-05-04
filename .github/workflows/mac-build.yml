@@ -25,7 +25,7 @@ jobs:
         brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep make ncurses pkg-config wget quilt xz
         #brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep ncurses pkg-config wget quilt xz
         brew install gcc@11
-        #brew install libncurses*
+        brew install libncurses*
         make -v
     - name: 升级make
       run: |
@@ -46,6 +46,7 @@ jobs:
         echo 'export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"' >> ~/.bashrc
         echo 'export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"' >> ~/.bashrc
         echo 'export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"' >> ~/.bashrc
+        cat ~/.bashrc
         make -v
     - name: 重新加载shell 启动文件
       run: |
