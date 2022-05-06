@@ -13,6 +13,10 @@ jobs:
         xcodebuild -version
         df -lh
         make -v
+        
+    - name: Checkout
+      uses: actions/checkout@main
+      
     - name: 安装 Homebrew
       run: |
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -66,13 +70,13 @@ jobs:
         hdiutil attach OpenWrt.sparseimage
         cd /Volumes/OpenWrt
         pwd
-    - name: 下载源代码，更新 feeds 并选择配置
+    - name: 下载源代码
       run: |
         cd /Volumes/OpenWrt
         git clone https://github.com/coolsnowwolf/lede
-        cd lede
-        echo "*********************pwd**************************************"
-        pwd
+    - name: 更新feeds
+        cd /Volumes/OpenWrt/lede
+        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         make defconfig
