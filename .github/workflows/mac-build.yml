@@ -3,27 +3,23 @@ name: Build OpenWrt on mac
 on: 
   repository_dispatch:
   workflow_dispatch:
-  
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds/feeds.conf.default
   CONFIG_FILE: config/lede_x86.config
-  
 jobs:
   build:
     runs-on: macos-11
     steps:
+    - name: Checkout
+      uses: actions/checkout@main
     - name: 查看mac
       run: |
         system_profiler SPHardwareDataType
         xcodebuild -version
         df -lh
         make -v
-        
-    - name: Checkout
-      uses: actions/checkout@main
-      
     - name: 安装 Homebrew
       run: |
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
