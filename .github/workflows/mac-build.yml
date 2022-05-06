@@ -4,8 +4,8 @@ on:
   repository_dispatch:
   workflow_dispatch:
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  #REPO_URL: https://github.com/coolsnowwolf/lede
+  #REPO_BRANCH: master
   FEEDS_CONF: feeds/feeds.conf.default
   CONFIG_FILE: config/lede_x86.config
 jobs:
