@@ -76,11 +76,11 @@ jobs:
         ./scripts/feeds install -a
     - name: 配置编译选项
       run: |
-        #cd /Volumes/OpenWrt/lede
-        #make defconfig
+        cd /Volumes/OpenWrt/lede
+        make defconfig
         #cd ../../../
         #[ -e $CONFIG_FILE ] && mv $CONFIG_FILE /Volumes/OpenWrt/lede/.config
-        [ -e $CONFIG_FILE ] && cp -v $CONFIG_FILE /Volumes/OpenWrt/lede/.config
+        #[ -e $CONFIG_FILE ] && cp -v $CONFIG_FILE /Volumes/OpenWrt/lede/.config
     - name: 下载 dl 库，编译固件
       run: |
         cd /Volumes/OpenWrt/lede
