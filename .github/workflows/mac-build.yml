@@ -31,8 +31,8 @@ jobs:
         brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep make ncurses pkg-config wget quilt xz
         #brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep ncurses pkg-config wget quilt xz
         brew install gcc@11
-        #brew install mkisofs
-        sudo ln -s /usr/bin/genisoimage /usr/bin/mkisofs
+        #brew install mkisofs  #找不到安装
+        #sudo ln -s /usr/bin/genisoimage /usr/bin/mkisofs #不允许操作
         make -v
     - name: 升级make
       run: |
