@@ -31,7 +31,7 @@ jobs:
         brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep make ncurses pkg-config wget quilt xz
         #brew install coreutils diffutils findutils gawk gnu-getopt gnu-tar grep ncurses pkg-config wget quilt xz
         brew install gcc@11
-        brew install mkisofs  #找不到安装
+        #brew install mkisofs  #找不到安装
         #sudo ln -s /usr/bin/genisoimage /usr/bin/mkisofs #不允许操作
         make -v
     - name: 升级make
@@ -53,6 +53,7 @@ jobs:
         echo 'export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"' >> ~/.bashrc
         echo 'export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"' >> ~/.bashrc
         echo 'export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"' >> ~/.bashrc
+        echo 'export PATH="/usr/bin/genisoimage:$PATH"' >> ~/.bashrc
         cat ~/.bashrc
         make -v
     - name: 重新加载shell 启动文件
