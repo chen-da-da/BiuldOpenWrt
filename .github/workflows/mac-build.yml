@@ -86,6 +86,7 @@ jobs:
         #[ -e $CONFIG_FILE ] && cp -v $CONFIG_FILE /Volumes/OpenWrt/lede/.config
     - name: 下载 dl 库，编译固件
       run: |
+        bash
         cd /Volumes/OpenWrt/lede
         make download -j8
         make -j$(nproc) ||  make -j1 V=s
