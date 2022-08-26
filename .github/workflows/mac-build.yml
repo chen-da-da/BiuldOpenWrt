@@ -73,7 +73,7 @@ jobs:
         
     - name: 更新和安装feeds
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF /Volumes/OpenWrt/lede/feeds.conf.default
+        #[ -e $FEEDS_CONF ] && mv $FEEDS_CONF /Volumes/OpenWrt/lede/feeds.conf.default
         cd /Volumes/OpenWrt/lede
         ./scripts/feeds update -a
         ./scripts/feeds install -a
