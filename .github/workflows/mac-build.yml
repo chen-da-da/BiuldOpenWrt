@@ -20,9 +20,11 @@ jobs:
         xcodebuild -version
         df -lh
         make -v
+    - name: 更新软件
+      run: |
+        Software Update
     - name: 安装 Homebrew
       run: |
-        xcode-select --install
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     - name: 使用 Homebrew 安装工具链、依赖与基础软件包
       run: |
