@@ -27,7 +27,8 @@ jobs:
         softwareupdate --install --all
     - name: 安装 Homebrew
       run: |
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     - name: 使用 Homebrew 安装工具链、依赖与基础软件包
       run: |
         #brew unlink awk
