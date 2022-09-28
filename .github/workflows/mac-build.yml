@@ -29,6 +29,7 @@ jobs:
       run: |
         #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        brew -v
     - name: 使用 Homebrew 安装工具链、依赖与基础软件包
       run: |
         #brew unlink awk
