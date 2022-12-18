@@ -20,11 +20,11 @@ jobs:
         xcodebuild -version
         df -lh
         make -v
-    - name: 更新软件
-      run: |
-        softwareupdate --list
-        echo "*******************"
-        softwareupdate --install --all
+#     - name: 更新软件
+#       run: |
+#         softwareupdate --list
+#         echo "*******************"
+#         softwareupdate --install --all
     - name: 安装 Homebrew
       run: |
         #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
