@@ -64,13 +64,13 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
     - name: 更新feeds
       run: cd openwrt && ./scripts/feeds update -a
+
+    - name: 安装feeds
+      run: cd openwrt && ./scripts/feeds install -a
       
     - name: 查看补丁
       run: |
         quilt series
-
-    - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
 
     - name: 更新config
       run: |
