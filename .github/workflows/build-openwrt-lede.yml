@@ -88,6 +88,7 @@ jobs:
     - name: 查看补丁
       run: |
         quilt series
+        quilt applied
         
     - name: 编译固件
       id: compile
