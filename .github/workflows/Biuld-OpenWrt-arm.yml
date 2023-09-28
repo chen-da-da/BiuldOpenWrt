@@ -32,14 +32,14 @@ jobs:
       with:
       # this might remove tools that are actually needed,
       # if set to "true" but frees about 6 GB
-        tool-cache: true
+        tool-cache: false
       # all of these default to true, but feel free to set to
       # "false" if necessary for your workflow
         android: false
-        dotnet: true
-        haskell: true
-        large-packages: true
-        swap-storage: true
+        dotnet: false
+        haskell: false
+        large-packages: false
+        swap-storage: false
 
     - name: 初始化环境
       env:
